@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Castalia Chess</title>
+    <meta name="description" content="A daily chess problem from Lichess.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero" aria-labelledby="title">
+        <div class="mast">
+          <p class="eyebrow">Castalia Chess</p>
+          <h1 id="title">Problem of the Day</h1>
+          <p id="summary" class="summary">Loading the daily Lichess puzzle...</p>
+        </div>
+        <div class="status" id="status">Connecting</div>
+      </section>
+
+      <section class="play">
+        <div class="board-wrap">
+          <div id="board" class="board" aria-label="Chess board"></div>
+          <div class="files" aria-hidden="true">
+            <span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <div>
+            <p class="label">Puzzle</p>
+            <h2 id="puzzle-id">Daily</h2>
+          </div>
+          <dl class="facts">
+            <div>
+              <dt>Side</dt>
+              <dd id="side">-</dd>
+            </div>
+            <div>
+              <dt>Rating</dt>
+              <dd id="rating">-</dd>
+            </div>
+            <div>
+              <dt>Themes</dt>
+              <dd id="themes">-</dd>
+            </div>
+          </dl>
+          <div class="moves">
+            <p class="label">Solution</p>
+            <ol id="solution"></ol>
+          </div>
+          <div class="actions">
+            <button id="reveal" type="button">Reveal</button>
+            <a id="lichess-link" href="https://lichess.org/training" rel="noreferrer">Open on Lichess</a>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

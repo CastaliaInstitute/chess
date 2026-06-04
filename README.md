@@ -1,0 +1,31 @@
+# Castalia Chess
+
+Static GitHub Pages site for `chess.castalia.institute`.
+
+The site fetches the Lichess daily puzzle from:
+
+```text
+https://lichess.org/api/puzzle/daily
+```
+
+It renders the FEN board client-side, highlights the last move, and reveals the solution on demand. A local fallback puzzle is bundled so the page still works if the Lichess request fails.
+
+## Local preview
+
+```bash
+python3 -m http.server 8080
+```
+
+Open `http://localhost:8080`.
+
+## GitHub Pages
+
+The `.github/workflows/pages.yml` workflow deploys the static files from this repository to GitHub Pages.
+
+The custom domain is configured in `CNAME`:
+
+```text
+chess.castalia.institute
+```
+
+DNS still needs a `CNAME` record for `chess.castalia.institute` pointing to the GitHub Pages host for this repository.
