@@ -28,7 +28,11 @@ The custom domain is configured in `CNAME`:
 chess.castalia.institute
 ```
 
-DNS still needs a `CNAME` record for `chess.castalia.institute` pointing to the GitHub Pages host for this repository.
+The default GitHub Pages URL is:
+
+```text
+https://castaliainstitute.github.io/chess/
+```
 
 ## Cloudflare Pages
 
@@ -38,4 +42,13 @@ The site is also deployed as a Cloudflare Pages project named `chess`.
 env -u CLOUDFLARE_ACCOUNT_ID wrangler pages deploy . --project-name chess --branch main
 ```
 
-The custom domain `chess.castalia.institute` is attached to the Cloudflare Pages project. The local environment has a `CLOUDFLARE_ACCOUNT_ID` for another account, so unset it when using Wrangler for this project.
+The custom domain `chess.castalia.institute` is attached to the Cloudflare Pages project. Cloudflare currently requires this DNS record in the `castalia.institute` zone:
+
+```text
+Type: CNAME
+Name: chess
+Target: chess-a5o.pages.dev
+Proxy: enabled or DNS-only
+```
+
+The local environment has a `CLOUDFLARE_ACCOUNT_ID` for another account, so unset it when using Wrangler for this project.
